@@ -1,0 +1,84 @@
+<section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 4rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-white" style="margin: 0 0 1rem 0;">
+      Our Delicious Menu
+    </h2>
+
+    <!-- Category Cards -->
+    <div class="row g-4 justify-content-center" style="margin: 2rem 0;">
+      @for (cat of categories; track cat.name) {
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="card h-100 shadow-lg border-0 cursor-pointer"
+            style="transition: all 0.3s ease; border-radius: 15px;"
+            (click)="showItems(cat)"
+            (keyup.enter)="showItems(cat)"
+            (keyup.space)="showItems(cat)"
+            tabindex="0"
+            role="button"
+            [attr.aria-label]="'View details for ' + cat.name"
+            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'"
+          >
+            <img
+              [src]="cat.image"
+              [alt]="cat.name"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover; border-radius: 15px 15px 0 0;"
+            />
+            <div class="card-body text-center" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 0 0 15px 15px;">
+              <h5 class="card-title fw-bold mb-3">{{ cat.name }}</h5>
+              <p class="fs-4 fw-bold mb-3" style="color: #fff3cd;">{{ cat.price }}</p>
+              <button class="btn btn-light fw-semibold px-4 py-2" style="border-radius: 25px; color: #f5576c;">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Selected Category Details -->
+    @if (selectedCategory) {
+      <div class="card shadow-lg border-0 mx-auto" style="max-width: 900px; border-radius: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="card-header d-flex justify-content-between align-items-center" style="background: transparent; border: none; padding: 2rem 2rem 1rem;">
+          <h3 class="text-white fw-bold mb-0 fs-2">{{ selectedCategory.name }}</h3>
+          <button (click)="closeItems()" class="btn btn-light btn-sm" style="border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; color: #f5576c;">
+            ×
+          </button>
+        </div>
+        
+        <div class="card-body" style="padding: 1rem 2rem 2rem;">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <img [src]="selectedCategory.image" [alt]="selectedCategory.name" 
+                   class="img-fluid" style="border-radius: 15px; height: 300px; width: 100%; object-fit: cover;">
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card h-100" style="background: rgba(255,255,255,0.95); border-radius: 15px; border: none;">
+                <div class="card-body">
+                  <h4 class="fw-bold mb-4" style="color: #764ba2;">What's Included:</h4>
+                  <ul class="list-unstyled">
+                    @for (item of selectedCategory.items; track item) {
+                      <li class="d-flex align-items-center mb-3">
+                        <span class="me-3" style="width: 8px; height: 8px; background: linear-gradient(45deg, #f093fb, #f5576c); border-radius: 50%; display: inline-block;"></span>
+                        <span style="color: #495057; font-weight: 500;">{{ item }}</span>
+                      </li>
+                    }
+                  </ul>
+                  <div class="mt-4">
+                    <p class="fs-2 fw-bold mb-4" style="color: #28a745;">{{ selectedCategory.price }}</p>
+                    <a href="#contact" class="btn btn-lg fw-semibold px-4 py-3" style="background: linear-gradient(45deg, #28a745, #20c997); color: white; border: none; border-radius: 25px; width: 100%; text-decoration: none;">
+                      📞 Subscribe Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
