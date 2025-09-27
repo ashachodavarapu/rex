@@ -16,32 +16,32 @@ interface Category {
 export class MenuComponent {
   categories: Category[] = [
     {
-      name: 'South Indian Tiffin',
-      price: '₹120/day',
-      items: ['Idli', 'Dosa', 'Sambar', 'Coconut Chutney', 'Vada'],
+      name: 'Sweet Potato Delights',
+      price: '₹180',
+      items: ['Honey Roasted Sweet Potato', 'Mashed Sweet Potato with Butter', 'Grilled Sweet Potato Wedges', 'Sweet Potato Fries', 'Caramelized Sweet Potato', 'Baked Sweet Potato with Herbs', 'Sweet Potato Halwa', 'Stuffed Sweet Potato', 'Sweet Potato Pancakes', 'Sweet Potato Tikki'],
       image:
-        'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=250&fit=crop',
+        'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2022/09/27/0/FNK_Air-Fryer-Sweet-Potatoes_H2_s4x3.jpg.rend.hgtvcom.616.462.85.suffix/1664309954439.webp',
     },
     {
-      name: 'North Indian Tiffin',
-      price: '₹140/day',
-      items: ['Dal', 'Sabzi', 'Roti', 'Rice', 'Pickle'],
+      name: 'Corn Varieties',
+      price: '₹150',
+      items: ['Sweet Corn: Buttered Sweet Corn Kernels', 'Sweet Corn: Grilled Corn on Cob', 'Sweet Corn: Corn Chaat', 'Sweet Corn: Creamy Corn Soup', 'Baby Corn: Honey Glazed Baby Corn', 'Baby Corn: Spicy Baby Corn Masala', 'Baby Corn: Crispy Baby Corn Fritters', 'Baby Corn: Baby Corn Manchurian', 'Baby Corn: Garlic Baby Corn Stir Fry', 'Baby Corn: Baby Corn Tikka'],
       image:
-        'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=250&fit=crop',
+        'https://d1w7312wesee68.cloudfront.net/QI8qpoKjjjmIFw3UYCfskaSN8NIHFyJKK9oGXY0XZNs/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-27783000000000000/menu/items/9/item-500000000686694639_1612845773.jpg',
+    },
+    {
+      name: 'Groundnut Varieties',
+      price: '₹120',
+      items: ['Roasted Groundnuts', 'Salted Peanuts', 'Spiced Groundnut Mix', 'Boiled Groundnuts', 'Groundnut Chaat', 'Honey Roasted Peanuts', 'Masala Groundnuts', 'Groundnut Laddu', 'Peanut Butter Spread', 'Groundnut Brittle'],
+      image:
+        'https://www.greendna.in/cdn/shop/files/steamedgroundnut1_1600x.webp?v=1710916181',
     },
     {
       name: 'Healthy Bowls',
-      price: '₹180/day',
-      items: ['Quinoa Bowl', 'Protein Salad', 'Fresh Juice', 'Nuts'],
+      price: '₹220',
+      items: ['Chia Pudding Bowl', 'Oats Pudding', 'Fresh Fruit Bowl', 'Smoothie Bowl', 'Mixed Berry Bowl', 'Quinoa Power Bowl', 'Acai Bowl', 'Granola Bowl', 'Yogurt Parfait Bowl', 'Green Smoothie Bowl'],
       image:
-        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop',
-    },
-    {
-      name: 'Snacks & Sweets',
-      price: '₹80/day',
-      items: ['Samosa', 'Pakora', 'Gulab Jamun', 'Tea'],
-      image:
-        'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=250&fit=crop',
+        'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=250&fit=crop',
     },
   ];
 

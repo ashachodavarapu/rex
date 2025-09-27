@@ -1,7 +1,7 @@
-<section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 4rem 1.5rem;">
+<section style="background: #000; min-height: 100vh; padding: 4rem 1.5rem;">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold text-center text-white" style="margin: 0 0 1rem 0;">
-      Our Delicious Menu
+    <h2 class="text-4xl font-bold text-center" style="color: #FFD700; margin: 0 0 1rem 0;">
+      Our Premium Menu
     </h2>
 
     <!-- Category Cards -->
@@ -26,10 +26,10 @@
               class="card-img-top"
               style="height: 200px; object-fit: cover; border-radius: 15px 15px 0 0;"
             />
-            <div class="card-body text-center" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 0 0 15px 15px;">
+            <div class="card-body text-center" style="background: #FFD700; color: #000; border-radius: 0 0 15px 15px;">
               <h5 class="card-title fw-bold mb-3">{{ cat.name }}</h5>
-              <p class="fs-4 fw-bold mb-3" style="color: #fff3cd;">{{ cat.price }}</p>
-              <button class="btn btn-light fw-semibold px-4 py-2" style="border-radius: 25px; color: #f5576c;">
+              <p class="fs-4 fw-bold mb-3" style="color: #000;">{{ cat.price }}</p>
+              <button class="btn fw-semibold px-4 py-2" style="background: #000; color: #FFD700; border-radius: 25px; border: none;">
                 View Details
               </button>
             </div>
@@ -40,40 +40,49 @@
 
     <!-- Selected Category Details -->
     @if (selectedCategory) {
-      <div class="card shadow-lg border-0 mx-auto" style="max-width: 900px; border-radius: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <div class="card shadow-lg border-0 mx-auto" style="max-width: 900px; border-radius: 20px; background: #000;">
         <div class="card-header d-flex justify-content-between align-items-center" style="background: transparent; border: none; padding: 2rem 2rem 1rem;">
-          <h3 class="text-white fw-bold mb-0 fs-2">{{ selectedCategory.name }}</h3>
-          <button (click)="closeItems()" class="btn btn-light btn-sm" style="border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; color: #f5576c;">
+          <h3 class="fw-bold mb-0 fs-2" style="color: #FFC107;">{{ selectedCategory.name }}</h3>
+          <button (click)="closeItems()" class="btn btn-sm" style="background: #FFC107; color: #000; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; border: none;">
             ×
           </button>
         </div>
         
         <div class="card-body" style="padding: 1rem 2rem 2rem;">
-          <div class="row g-4">
-            <div class="col-md-6">
-              <img [src]="selectedCategory.image" [alt]="selectedCategory.name" 
-                   class="img-fluid" style="border-radius: 15px; height: 300px; width: 100%; object-fit: cover;">
-            </div>
-            
-            <div class="col-md-6">
-              <div class="card h-100" style="background: rgba(255,255,255,0.95); border-radius: 15px; border: none;">
-                <div class="card-body">
-                  <h4 class="fw-bold mb-4" style="color: #764ba2;">What's Included:</h4>
+          <div class="card" style="background: #FFC107; border-radius: 15px; border: none;">
+            <div class="card-body">
+              <h4 class="fw-bold mb-4" style="color: #000;">What's Included:</h4>
+              <div class="row">
+                <div class="col-md-6">
                   <ul class="list-unstyled">
-                    @for (item of selectedCategory.items; track item) {
-                      <li class="d-flex align-items-center mb-3">
-                        <span class="me-3" style="width: 8px; height: 8px; background: linear-gradient(45deg, #f093fb, #f5576c); border-radius: 50%; display: inline-block;"></span>
-                        <span style="color: #495057; font-weight: 500;">{{ item }}</span>
-                      </li>
+                    @for (item of selectedCategory.items; track item; let i = $index) {
+                      @if (i % 2 === 0) {
+                        <li class="d-flex align-items-center mb-2">
+                          <span class="me-2" style="width: 6px; height: 6px; background: #000; border-radius: 50%; display: inline-block;"></span>
+                          <span style="color: #333; font-weight: 500; font-size: 0.9rem;">{{ item }}</span>
+                        </li>
+                      }
                     }
                   </ul>
-                  <div class="mt-4">
-                    <p class="fs-2 fw-bold mb-4" style="color: #28a745;">{{ selectedCategory.price }}</p>
-                    <a href="#contact" class="btn btn-lg fw-semibold px-4 py-3" style="background: linear-gradient(45deg, #28a745, #20c997); color: white; border: none; border-radius: 25px; width: 100%; text-decoration: none;">
-                      📞 Subscribe Now
-                    </a>
-                  </div>
                 </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    @for (item of selectedCategory.items; track item; let i = $index) {
+                      @if (i % 2 === 1) {
+                        <li class="d-flex align-items-center mb-2">
+                          <span class="me-2" style="width: 6px; height: 6px; background: #000; border-radius: 50%; display: inline-block;"></span>
+                          <span style="color: #333; font-weight: 500; font-size: 0.9rem;">{{ item }}</span>
+                        </li>
+                      }
+                    }
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4">
+                <p class="fs-2 fw-bold mb-4" style="color: #000;">{{ selectedCategory.price }}</p>
+                <a href="#contact" class="btn btn-lg fw-semibold px-4 py-3" style="background: #000; color: #FFC107; border: none; border-radius: 25px; width: 100%; text-decoration: none;">
+                  📞 Order Now
+                </a>
               </div>
             </div>
           </div>
