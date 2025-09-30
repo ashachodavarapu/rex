@@ -1,9 +1,18 @@
 #heroCarousel {
   position: relative;
+  touch-action: pan-y;
 }
 
 .hero-banner {
   position: relative;
+}
+
+.carousel-inner {
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Flipkart-style Arrow Controls */
@@ -83,16 +92,7 @@
 @media (max-width: 768px) {
   .carousel-control-prev,
   .carousel-control-next {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .carousel-control-prev {
-    left: 10px;
-  }
-  
-  .carousel-control-next {
-    right: 10px;
+    display: none;
   }
   
   .carousel-indicators button {

@@ -1,8 +1,8 @@
 <app-navbar (navigationClick)="navigateToSection($event)"></app-navbar>
 
 <!-- Hero Carousel Section -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="false">
-  <div class="carousel-inner">
+<div id="heroCarousel" class="carousel slide" data-bs-ride="false" data-bs-touch="true" data-bs-interval="false">
+  <div class="carousel-inner" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
     <!-- Home Hero -->
     <div class="carousel-item" [class.active]="currentSection === 'home'">
       <div class="hero-banner" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); height: 400px; display: flex; align-items: center; justify-content: center; position: relative;">
