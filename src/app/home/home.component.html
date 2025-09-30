@@ -1,12 +1,6 @@
-<!-- Hero Section -->
-<section class="text-white" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 5rem 0;">
+<!-- Food Truck Division Section -->
+<section class="text-white" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 3rem 0;">
   <div class="container text-center">
-    <h1 class="display-3 display-md-1 fw-bold mb-3 text-center">
-      Welcome to <span style="color: #FFC107;">Rex</span>
-    </h1>
-    <h2 class="h4 mb-4 text-center" style="color: #FFC107; font-style: italic;">
-      "Built to Lead. Built for Life"
-    </h2>
     <p class="lead mb-4 fs-5 fs-md-4">
       <span style="color: #FFD700; font-size: 2rem; margin-right: 8px;">♚</span><span style="font-weight: bold; color: #FFC107; letter-spacing: 1px;">Rex</span> Multi-Business Company<br>
       <span class="d-block d-md-inline">Food Truck Division:</span>
@@ -14,12 +8,12 @@
       <small class="fs-6 fs-md-5">Food Truck Services starting from ₹120/order</small>
     </p>
     <div class="d-flex flex-column flex-md-row justify-content-center align-items-center" style="gap: 1rem;">
-      <a href="#menu" class="btn px-4 py-2 fw-semibold" style="background: #FFC107; color: #000; border-radius: 20px; text-decoration: none; border: none; min-width: 200px;" onmouseover="this.style.background='#FFA500'" onmouseout="this.style.background='#FFC107'" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'});">
+      <button class="btn px-4 py-2 fw-semibold" style="background: #FFC107; color: #000; border-radius: 20px; border: none; min-width: 200px;" (click)="navigateToMenu()">
         🍽️ View Menu
-      </a>
-      <a href="#contact" class="btn px-4 py-2 fw-semibold" style="background: transparent; color: #FFC107; border: 2px solid #FFC107; border-radius: 20px; text-decoration: none; min-width: 200px;" onmouseover="this.style.background='#FFC107'; this.style.color='#000'" onmouseout="this.style.background='transparent'; this.style.color='#FFC107'" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+      </button>
+      <button class="btn px-4 py-2 fw-semibold" style="background: transparent; color: #FFC107; border: 2px solid #FFC107; border-radius: 20px; min-width: 200px;" (click)="navigateToContact()">
         📞 Order Now
-      </a>
+      </button>
     </div>
   </div>
 </section>
@@ -92,8 +86,8 @@
     <p class="lead" style="color: #FFF; margin: 2rem 0;">
       Join hundreds of satisfied customers who love our nutritious varieties
     </p>
-    <a href="#contact" class="btn btn-lg px-5 py-3 fw-semibold" style="background: #FFD700; color: #000; border-radius: 25px; text-decoration: none; border: none;" onmouseover="this.style.background='#FFA500'" onmouseout="this.style.background='#FFD700'" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+    <button class="btn btn-lg px-5 py-3 fw-semibold" style="background: #FFD700; color: #000; border-radius: 25px; border: none;" (click)="navigateToContact()">
       🚀 Order Now
-    </a>
+    </button>
   </div>
 </section>

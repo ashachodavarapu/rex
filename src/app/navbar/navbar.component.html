@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Logo -->
     <div class="w-100 d-flex justify-content-center">
-      <a class="navbar-brand d-flex align-items-center flex-column" href="#home">
+      <a class="navbar-brand d-flex align-items-center flex-column" (click)="navigate('home')" style="cursor: pointer;">
         <div class="d-flex align-items-center">
           <span class="d-flex align-items-center"><span style="color: #FFD700; font-size: 2.5rem; margin-right: 8px;">♚</span><span class="fw-bold fs-3" style="color: #FFC107; letter-spacing: 2px;">Rex</span></span>
         </div>
@@ -19,21 +19,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link fw-semibold px-3" href="#home" style="color: #FFC107;">Home</a>
+          <a class="nav-link fw-semibold px-3" (click)="navigate('home')" style="color: #FFC107; cursor: pointer;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold px-3" href="#menu" style="color: #FFC107;">Menu</a>
+          <a class="nav-link fw-semibold px-3" (click)="navigate('menu')" style="color: #FFC107; cursor: pointer;">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold px-3" href="#about" style="color: #FFC107;">About</a>
+          <a class="nav-link fw-semibold px-3" (click)="navigate('about')" style="color: #FFC107; cursor: pointer;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold px-3" href="#contact" style="color: #FFC107;">Contact</a>
+          <a class="nav-link fw-semibold px-3" (click)="navigate('contact')" style="color: #FFC107; cursor: pointer;">Contact</a>
         </li>
       </ul>
       
       <!-- CTA Button -->
-      <a href="#contact" class="btn fw-semibold px-3 py-1" style="background: #FFC107; color: #000; border: none; border-radius: 20px; text-decoration: none; font-size: 0.9rem; white-space: nowrap;">
+      <a (click)="navigate('contact')" class="btn fw-semibold px-3 py-1" style="background: #FFC107; color: #000; border: none; border-radius: 20px; text-decoration: none; font-size: 0.9rem; white-space: nowrap; cursor: pointer;">
         📞 Contact Us
       </a>
     </div>

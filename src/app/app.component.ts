@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MenuComponent } from './menu/menu.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-root',
   imports: [
+    CommonModule,
     MenuComponent,
     NavbarComponent,
     AboutComponent,
@@ -20,4 +22,23 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'rex_bussines';
+  currentSection = 'home';
+  
+  navigateToSection(section: string) {
+    this.currentSection = section;
+  }
+  
+  nextSlide() {
+    const sections = ['home', 'menu', 'about', 'contact'];
+    const currentIndex = sections.indexOf(this.currentSection);
+    const nextIndex = (currentIndex + 1) % sections.length;
+    this.currentSection = sections[nextIndex];
+  }
+  
+  previousSlide() {
+    const sections = ['home', 'menu', 'about', 'contact'];
+    const currentIndex = sections.indexOf(this.currentSection);
+    const prevIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
+    this.currentSection = sections[prevIndex];
+  }
 }
